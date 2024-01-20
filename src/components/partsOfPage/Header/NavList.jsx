@@ -5,10 +5,10 @@ const NavList = () => {
     <nav>
         <ul>
             <li>
-                <NavLink>Home</NavLink>
+                <NavLink to='/'>Home</NavLink>
             </li>
             <li>
-                <NavLink>Contacts</NavLink>
+                <NavLink to='/contacts'>Contacts</NavLink>
             </li>
         </ul>
     </nav>

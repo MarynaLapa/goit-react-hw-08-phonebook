@@ -1,8 +1,12 @@
-import RegistrationForm from 'components/partsOfPage/contactForm/RegistrationForm/RegistrationForm'
+import RegistrationForm from 'components/partsOfPage/RegistrationForm/RegistrationForm'
 
 const RegistrationPage = () => {
 
-  return <RegistrationForm/>
+  return (
+    <div>
+      <RegistrationForm />
+    </div>
+  )
 
 }
 

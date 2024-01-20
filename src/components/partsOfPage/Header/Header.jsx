@@ -1,11 +1,13 @@
 import Container from '../Container'
+import Logout from './Logout'
 import NavList from './NavList'
 
 const Header = () => {
   return (
     <header>
         <Container>
-            <NavList/>
+            <NavList />
+            <Logout/>
         </Container>
     </header>
   )
