@@ -4,7 +4,7 @@ import { FormStyled } from 'components/styled/style'
 import Button from 'components/partsOfPage/Button'
 import InputWrapper from '../InputWrapper'
 import { useDispatch, useSelector } from 'react-redux'
-import { contactsSelector, isLoadingSelector } from 'store/selectors'
+import { contactsSelector } from 'store/selectors'
 import { createContactsThunk } from 'store/Contacts/ThunkContacts'
 
 

@@ -7,13 +7,12 @@ import Container from "./components/partsOfPage/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { getContactsThunk } from "store/Contacts/ThunkContacts";
 import { useEffect } from "react";
-import { errorSelector, isLoadingSelector } from "store/selectors";
+import { errorSelector } from "store/selectors";
 
 
 const App = () => {
   
   const dispatch = useDispatch()
-  const isLoading = useSelector(isLoadingSelector)
   const error = useSelector(errorSelector)
   
   useEffect(() => {
