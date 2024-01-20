@@ -4,14 +4,14 @@ import './index.css';
 import App from 'App';
 import { Provider } from 'react-redux';
 import { store } from './store/store'
-// import { Normalize } from 'styled-normalize'
-
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <React.StrictMode>
-        {/* <Normalize /> */}
+      <BrowserRouter  basename="/react-homework-template">
         <App />
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>
   

@@ -75,17 +75,23 @@ const Container = styled.div`
 `;
 
 const AddButton = styled.button`
-    padding: 4px 8px;
-    width: 160px;
-    background-color: #6f6ffa;
-    border: none;
+    width: 200px;
+    background-color: #7d7da9;
     border-radius: 8px;
     cursor: pointer;
     color: white;
     font-family: inherit;
-    font-size: medium;
     letter-spacing: 1px;
     box-shadow: 0 15px 15px rgba(124, 97, 245, 0.2);
+    border-radius: 20px;
+    border: 1px solid #9898d8;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    text-transform: uppercase;
+    // transition: transform 80ms ease-in;
+
+
 
     &:hover {
         background-color: #0404ac;
@@ -95,8 +101,16 @@ const AddButton = styled.button`
 `;
 
 const FormStyled = styled.form`
-  width: 320px;
-  text-align: center;
+    width: 320px;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 `; 
 
 const Title = styled.h1`
