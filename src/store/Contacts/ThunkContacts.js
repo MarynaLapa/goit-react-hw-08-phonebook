@@ -11,7 +11,6 @@ export const getContactsThunk = createAsyncThunk(
             const { data } = await getAllContacts()
             return data
         } catch (error) {
-            console.log('error', error)
             return rejectWithValue(error)
         } finally {
             Loading.remove();
@@ -22,10 +21,8 @@ export const getContactsThunk = createAsyncThunk(
 export const createContactsThunk = createAsyncThunk(
     'contacts/addContacts', async (body, { rejectWithValue }) => {
         try {
-
             return await addContact(body)
         } catch (error) {
-            console.log('error', error)
             return rejectWithValue(error)
         }
     }

@@ -13,5 +13,5 @@ const LoginForm = () => {
     </FormStyled>
   )
 }
-
+// "name": "Adrian Cross", "email": "across@mail.com", "password": "examplepwd12345"
 export default LoginForm
