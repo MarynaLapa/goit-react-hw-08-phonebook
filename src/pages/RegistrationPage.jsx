@@ -29,12 +29,12 @@ const RegistrationPage = () => {
     <Section>
       <Container>
         <Wrap >
-          <FormWrapper > 
-            <RegistrationForm register={register} />
-          </FormWrapper>
           <FormWrapper style={WrapperStyled}>
             <SignContent title={'Welcome Back!'} description={"To keep connected with us please login with your personal info"} />
             <Button onClick={()=> navigate('/login')}>Sign In</Button>
+          </FormWrapper>
+          <FormWrapper > 
+            <RegistrationForm register={register} />
           </FormWrapper>
         </Wrap>
       </Container>

@@ -1,17 +1,19 @@
 import styled from "styled-components"
 
 export const FormContainer = styled.form`
-  text-align: left;
   font-style: italic;
+  text-align: left;
   h1 {
     font-family: 'Dancing Script', cursive; 
     font-size: 48px;  
     margin-bottom: 24px;
   }
-  div{
+
+  div {
     height: 100px;
   }
-  input{
+
+  input {
       background-color: #eeeeee63;;
       border: none;
       padding: 12px 15px;
@@ -25,6 +27,9 @@ export const FormContainer = styled.form`
     display: block;
     font-size: 10px;
     text-align: left;
+  }
+  label {
+    
   }
 `
 
@@ -53,7 +58,6 @@ export const Wrap = styled.div`
 `
 
 export const FormWrapper = styled.div`
-  border-top-right-radius: 10px;
   width: 50%;
   height: 600px;
   background: #fff;
