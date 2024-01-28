@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { singUpThunk } from './authThunk';
-import { handlerSignUp } from './handlers';
+
+import { loginThunk, singUpThunk } from './authThunk';
+import { handlerLogin, handlerPending, handlerRejected, handlerSignUp } from './handlers';
 
 const initialState = {
     isLoading: false, 
@@ -16,7 +17,12 @@ const authSlice = createSlice({
     initialState,
     extraReducers: builder => {
         builder
+            .addCase(singUpThunk.pending, handlerPending)
             .addCase(singUpThunk.fulfilled, handlerSignUp)
+            .addCase(singUpThunk.rejected, handlerRejected)
+            .addCase(loginThunk.pending, handlerPending)
+            .addCase(loginThunk.fulfilled, handlerLogin)
+            .addCase(loginThunk.rejected, handlerRejected)
     }
 })
 

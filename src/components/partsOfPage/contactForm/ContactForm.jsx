@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import data from './data.json'
 import { FormStyled } from 'components/styled/style'
-// import Button from 'components/partsOfPage/Nasil'
 import InputWrapper from '../InputWrapper'
 import { useDispatch, useSelector } from 'react-redux'
 import { contactsSelector } from 'store/selectors'
 import { createContactsThunk } from 'store/Contacts/ThunkContacts'
+import { Button } from 'components/styled/formStyled'
 
 
 const ContactForm = () => {
@@ -59,16 +59,8 @@ const ContactForm = () => {
 
   return (
         <FormStyled onSubmit={handlerSubmit}> 
-          <InputWrapper
-            data={data}
-            value={[name, number]}
-            onChange={handlerChange}
-      />
-      
-          {/* <Button
-            text={'Add contact'}
-            type={'submit'}
-          /> */}
+          <InputWrapper data={data} value={[name, number]} onChange={handlerChange}/>
+          <Button type='submit'>Add contact</Button>
         </FormStyled>
     )
 }

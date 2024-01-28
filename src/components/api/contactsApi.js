@@ -1,15 +1,15 @@
 import { api } from "./api";
 
 export const getAllContacts = async () => {
-    return await api('/contacts')
+    return await api('contacts')
 }
 
 export const addContact = async (contact) => {
-    const { data } = await api.post('/contacts', contact) 
+    const { data } = await api.post('contacts', contact) 
     return data
 }
 
-export const removeContact = async (id) => {
-    const { data } = await api.delete(`/contacts/${id}`)
+export const removeContact = async (contactId) => {
+    const { data } = await api.delete(`contacts/${contactId}`)
     return data
 }

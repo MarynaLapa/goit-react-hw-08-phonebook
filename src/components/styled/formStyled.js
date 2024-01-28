@@ -2,14 +2,16 @@ import styled from "styled-components"
 
 export const FormContainer = styled.form`
   font-style: italic;
-  text-align: left;
+  // text-align: left;
   h1 {
+    text-align: left;
     font-family: 'Dancing Script', cursive; 
     font-size: 48px;  
     margin-bottom: 24px;
   }
 
   div {
+    text-align: left;
     height: 100px;
   }
 
@@ -23,13 +25,11 @@ export const FormContainer = styled.form`
   }
 
   span {
+    text-align: left;
     color: red;
     display: block;
     font-size: 10px;
     text-align: left;
-  }
-  label {
-    
   }
 `
 
@@ -87,7 +87,7 @@ export const Button = styled.button`
     text-transform: uppercase;
     transition: transform 80ms ease-in;
     padding: 12px 45px;
-    width: 160px;
+    min-width: 160px;
 
     &:active {
       transform: scale(.95);

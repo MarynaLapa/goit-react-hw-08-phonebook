@@ -1,12 +1,13 @@
-import { apiAuth } from "./api"
+import { api } from "./api"
 
 export const signUpApi = async (body) => {
-    const response  = await apiAuth.post('users/signup', body)
-    console.log('data', response)
-    return response 
+    console.log('body', body)
+    const { data } = await api.post('users/signup', body)
+    console.log('data', data)
+    return data 
 }
 
 export const loginApi = async (body) => {
-    const { data } = await apiAuth.post('/users/login', body)
+    const { data } = await api.post('/users/login', body)
     return data
 }

@@ -15,7 +15,7 @@ const RegistrationForm = ({ register }) => {
         form.forEach((value, key) => {
             formData[key] = value  
         })
-
+        console.log('formData', formData)
         register(formData)
 
     }
@@ -25,7 +25,7 @@ const RegistrationForm = ({ register }) => {
             <h1 >Create Account</h1>
             <div>
                 {(name.value.length > 0 ) && <label htmlFor='name'>Name</label>}
-                <input onChange={e => name.onChange(e)} onBlur={e => name.onBlur(e)} value={name.value} type="text" name="text" placeholder="Enter your name..." id="name" required/>
+                <input onChange={e => name.onChange(e)} onBlur={e => name.onBlur(e)} value={name.value} type="text" name="name" placeholder="Enter your name..." id="name" required/>
                 {(name.isDirty && name.isEmpty) && <span>{name.isEmptyError}</span>}
             </div>  
             <div>
