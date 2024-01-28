@@ -54,7 +54,7 @@ const useValidation = (value, validations) => {
 
             }
         }
-    }, [value])
+    }, [value, validations])
 
    useEffect(() => {
        if (isEmpty || isEmailError || minLength || maxLength) {
@@ -73,7 +73,6 @@ const useValidation = (value, validations) => {
         minLengthError,
         maxLength,
         maxLengthError,
-        maxLength,
         isEmailError,
         inValid
     }
