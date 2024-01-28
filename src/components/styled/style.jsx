@@ -4,13 +4,16 @@ const SectionStyled = styled.section`
     padding: 40px 0;
 `
 const Wrapper = styled.div`
-  padding: 0 32px;
-  width: 1460px;
-  margin: 0 auto;
+    // display: ${(props) => props ? "flex" : "block"};
+    // justify-content: space-between;
+    // align-tems: center;
+    padding: 0 32px;
+    width: 1460px;
+    margin: 0 auto;
 `
 
 const List = styled.ul`
-position: relative;
+    position: relative;
     display: table-cell;
     font-size: 24px;
     text-transform: capitalize;
@@ -74,34 +77,9 @@ const Container = styled.div`
     margin: 20px;
 `;
 
-const AddButton = styled.button`
-    width: 200px;
-    background-color: #7d7da9;
-    border-radius: 8px;
-    cursor: pointer;
-    color: white;
-    font-family: inherit;
-    letter-spacing: 1px;
-    box-shadow: 0 15px 15px rgba(124, 97, 245, 0.2);
-    border-radius: 20px;
-    border: 1px solid #9898d8;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    text-transform: uppercase;
-    // transition: transform 80ms ease-in;
-
-
-
-    &:hover {
-        background-color: #0404ac;
-        letter-spacing: 2px;
-        scale: 1.01;
-    }
-`;
-
 const FormStyled = styled.form`
     width: 320px;
+    heigth: 480px;
     text-align: center;
     background: #fff;
     display: flex;
@@ -114,13 +92,15 @@ const FormStyled = styled.form`
 `; 
 
 const Title = styled.h1`
-  font-size: 56px;
-  padding-left: 16px;
+    font-size: 56px;
+    padding-left: 16px;
+    font-family: 'Dancing Script', cursive; 
 `;
 
 const TitleSection = styled.h2`
-  font-size: 34px;
-  padding-left: 16px;
+    font-size: 34px;
+    font-family: 'Dancing Script', cursive;
+    padding-left: 16px;
 `;
 
-export {SectionStyled, Wrapper, List, InputContainer, Container, AddButton, FormStyled, Title, TitleSection}
+export {SectionStyled, Wrapper, List, InputContainer, Container, FormStyled, Title, TitleSection}

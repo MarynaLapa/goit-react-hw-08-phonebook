@@ -9,20 +9,23 @@ import { authReducer } from "./Auth/authSlice";
 const persistConfig = {
   key: 'auth',
   storage,
-//   whitelist: ['token']
+  whitelist: ['token']
 }
 
 const persistedReducer = persistReducer(persistConfig, authReducer) 
 
-const reducer = {
+// const reducer = {
+//     filter: filterReducer,
+//     contacts: contactsReducer,
+//     auth: persistedReducer,
+// }
+
+export const store = configureStore({
+    reducer: {
     filter: filterReducer,
     contacts: contactsReducer,
     auth: persistedReducer,
-}
-
-
-export const store = configureStore({
-    reducer,
+},
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
@@ -30,4 +33,4 @@ export const store = configureStore({
       },
     })
 })
-export const persistor = persistStore(store)
+export const persistr = persistStore(store)

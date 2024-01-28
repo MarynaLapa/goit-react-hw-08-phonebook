@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { loginApi, signUpApi } from '../../components/api/auth';
 
 export const singUpThunk = createAsyncThunk(
-    'auth/signUp', async (body, { rejectWithValue }) => {
+    'auth/signup', async (body, { rejectWithValue }) => {
     try {
         return await signUpApi(body)
     } catch (error) {

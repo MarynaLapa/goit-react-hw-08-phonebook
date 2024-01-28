@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { removeContactThunk } from "store/Contacts/ThunkContacts"
-import Button from "../Button"
+// import Button from "../Nasil"
 
 const ContactsListItem = ({ contacts }) => {
 
@@ -11,9 +11,9 @@ const ContactsListItem = ({ contacts }) => {
         {contacts.map(contact => (
             <li key={contact.id} id={contact.id}>
                 <span>{contact.name +': '+ contact.number}</span>
-                <Button type='button' text={"Delete"}
+                {/* <Button type='button' text={"Delete"}
                     onClick={() => dispatch(removeContactThunk(contact.id))}
-                />  
+                />   */}
             </li>))
         }
     </>

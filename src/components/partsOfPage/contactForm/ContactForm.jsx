@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import data from './data.json'
 import { FormStyled } from 'components/styled/style'
-import Button from 'components/partsOfPage/Button'
+// import Button from 'components/partsOfPage/Nasil'
 import InputWrapper from '../InputWrapper'
 import { useDispatch, useSelector } from 'react-redux'
 import { contactsSelector } from 'store/selectors'
@@ -65,10 +65,10 @@ const ContactForm = () => {
             onChange={handlerChange}
       />
       
-          <Button
+          {/* <Button
             text={'Add contact'}
             type={'submit'}
-          />
+          /> */}
         </FormStyled>
     )
 }

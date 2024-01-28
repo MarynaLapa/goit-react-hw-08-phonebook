@@ -1,31 +1,51 @@
-import Button from "components/partsOfPage/Button"
-import Input from "components/partsOfPage/Input"
-import { FormStyled } from "components/styled/style"
+import { Button, FormContainer } from "../../styled/formStyled"
+import { useInput } from "../validation/validationState"
 
 const RegistrationForm = ({ register }) => {
+
+    const email = useInput('', {isEmpty: true, minLength: 3, isEmail: true})
+    const password = useInput('', {isEmpty: true, minLength: 7, maxLength: 12})
+    const name = useInput('', { isEmpty: true })
     
     const handlerSubmit = (e) => {
         e.preventDefault() 
 
-        const data = new FormData(e.currentTarget)
+        const form = new FormData(e.currentTarget)
         const formData = {}
-        data.forEach((value, key) => {
+        form.forEach((value, key) => {
             formData[key] = value  
         })
 
-        console.log('formData', formData)
         register(formData)
+
     }
     
-  return (
-      <FormStyled onSubmit={handlerSubmit}>
-          <h1>Create Account</h1>
-          <Input htmlFor={'fullName'} label={''} id={'fullName'} type={'text'} name={'name'} placeholder={"Name"} /> 
-          <Input htmlFor={'userEmail'} label={''} id={'userEmail'} type={'email'} name={'email'} placeholder={"Email"} />
-          <Input htmlFor={'userPassword'} label={''} id={'userPassword'} type={'current-password'} name={'password'} placeholder={"Password"} /> 
-          <Button type="submit" text={'Sign Up'} />
-      </FormStyled>
-  )
+    return (
+        <FormContainer onSubmit={handlerSubmit}>
+            <h1 >Create Account</h1>
+            <div>
+                {(name.value.length > 0 ) && <label htmlFor='name'>Name</label>}
+                <input onChange={e => name.onChange(e)} onBlur={e => name.onBlur(e)} value={name.value} type="text" name="text" placeholder="Enter your name..." id="name" required/>
+                {(name.isDirty && name.isEmpty) && <span>{name.isEmptyError}</span>}
+            </div>  
+            <div>
+                {(email.value.length > 0 ) && <label htmlFor='email'>Email</label>}
+                <input onChange={e => email.onChange(e)} onBlur={e => email.onBlur(e)} value={email.value} type="email" name="email" placeholder="Enter your email..." id="email" required/>
+                {(email.isDirty && email.isEmpty) && <span>{email.isEmptyError}</span>}
+                {(email.isDirty && email.minLength) && <span>Field length at least 3 characters</span>}
+                {(email.isDirty && email.isEmailError) && <span>{email.isEmailError}</span>}
+            </div>
+            <div>
+                {(password.value.length > 0 ) && <label htmlFor='password'>Password</label>}
+                <input onChange={e => password.onChange(e)} onBlur={e => password.onBlur(e)} value={password.value} type="current-password" name="password" placeholder="Enter your password..." id='password' required/>
+                {(password.isDirty && password.isEmpty) && <span>{password.isEmptyError}</span>}
+                {(password.isDirty && password.minLength) && <span>{password.minLengthError}</span>}
+                {(password.isDirty && password.maxLength) && <span>{password.maxLengthError}</span>}
+            </div>
+
+            <Button disabled={!email.inValid || !password.inValid || !name.inValid} type={"submit"}>Sign Up</Button>
+        </FormContainer>
+    )
 }
 
 export default RegistrationForm

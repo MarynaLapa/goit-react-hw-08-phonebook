@@ -1,21 +1,56 @@
-import RegistrationForm from 'components/partsOfPage/RegistrationForm/RegistrationForm'
+
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { singUpThunk } from 'store/Auth/authThunk';
+import Container from 'components/partsOfPage/Container';
+import Section from 'components/partsOfPage/Section';
+import { Button, FormWrapper, Wrap, WrapperStyled } from './../components/styled/formStyled';
+import SignContent from './../components/partsOfPage/SignContent';
+import RegistrationForm from 'components/partsOfPage/RegistrationForm/RegistrationForm';
 
 const RegistrationPage = () => {
 
+  const navigate = useNavigate()
   const dispatch = useDispatch()
+  // console.log('location state', location.state.from.pathname )//Шлях до запиту
+
+
   const register = (body) => {
     dispatch(singUpThunk(body))
+    .unwrap()
+      .then((payload) => {
+        console.log('payload', payload)
+        navigate('/contacts')
+      })
+    .catch((error) => console.error('rejected', error))
   }
-  return (
-    <div>
-      <RegistrationForm register={register}/>
-    </div>
-  )
 
+  return (
+    <Section>
+      <Container>
+        <Wrap >
+          <FormWrapper > 
+            <RegistrationForm register={register} />
+          </FormWrapper>
+          <FormWrapper style={WrapperStyled}>
+            <SignContent title={'Welcome Back!'} description={"To keep connected with us please login with your personal info"} />
+            <Button onClick={()=> navigate('/login')}>Sign In</Button>
+          </FormWrapper>
+        </Wrap>
+      </Container>
+    </Section>
+  )
 }
 
 export default RegistrationPage
 
 
+ // <Section>
+    //   <Container>
+    //     <div>
+          
+    //       {/* <Button text={'Log In'} type={'button'} onClick={() => navigate('/login')} /> */}
+    //       <Link to="/login" state={{from: location}}>Sign In</Link>
+    //     </div>
+    //   </Container>
+    // </Section>
