@@ -1,20 +1,21 @@
-import Container from '../Container'
+import { useSelector } from 'react-redux'
 import Logout from './Logout'
 import NavList from './NavList'
-import styled from "styled-components"
+import { profileSelector } from 'store/Auth/selectors'
+import LoginList from './LoginList'
+import { HeaderContainer, HeaderStyled } from './headerStyled'
 
-const HeaderStyled = styled.header`
-  border-bottom: 2px solid #c4c4f2;
-  padding: 16px 32px;
-`
 
 const Header = () => {
+
+  const profile = useSelector(profileSelector)
+
   return (
     <HeaderStyled>
-      <Container props={true}>
+      <HeaderContainer >
         <NavList />
-        <Logout />
-      </Container>
+        {profile ? <Logout />: <LoginList/>}
+      </HeaderContainer>
     </HeaderStyled>
   )
 }

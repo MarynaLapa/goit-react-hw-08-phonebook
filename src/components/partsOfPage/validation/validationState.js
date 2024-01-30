@@ -48,7 +48,7 @@ const useValidation = (value, validations) => {
                     break
                 
                 case 'isEmail':
-                    // const emailRegex ="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+[a-zA-Z0-9-.]+$"
+                    // const emailRegex ="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" ///Потрібно доопрацювати 
                     // emailRegex.test(String(value).toLowerCase()) ? setIsEmailError('') : setIsEmailError('Incorrectly entered password')
                     break
 

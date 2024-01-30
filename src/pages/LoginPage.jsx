@@ -1,13 +1,13 @@
 import Container from "components/partsOfPage/Container"
-import { Button, Wrap, WrapperStyled } from "components/styled/formStyled"
+import { Button, SectionContacts, Wrap, WrapperStyled } from "components/styled/formStyled"
 import { FormWrapper } from '../components/styled/formStyled';
 import LoginForm from "components/partsOfPage/LoginForm/LoginForm"
-import Section from "components/partsOfPage/Section"
 
 import { useDispatch } from "react-redux"
 import { loginThunk } from "store/Auth/authThunk"
 import SignContent from './../components/partsOfPage/SignContent';
 import { useNavigate } from "react-router-dom";
+import { Notify } from "notiflix";
 
 
 
@@ -19,14 +19,16 @@ const LoginPage = () => {
     dispatch(loginThunk(body))
     .unwrap()
       .then((payload) => {
-        console.log('payload', payload)
-          navigate('/contacts')
+        navigate('/contacts')
+        Notify.success(`Welcome, ${payload.user.name}!`)
        })
-    .catch((error) => {})
+      .catch((error) => {
+        Notify.failure('Error while logging in. Please check your entered data and try again')
+    })
   }
 
   return (
-    <Section>
+    <SectionContacts>
       <Container>
         <Wrap >
           <FormWrapper > 
@@ -38,7 +40,7 @@ const LoginPage = () => {
           </FormWrapper>
         </Wrap>
       </Container>
-    </Section>
+    </SectionContacts>
   )
 }
 

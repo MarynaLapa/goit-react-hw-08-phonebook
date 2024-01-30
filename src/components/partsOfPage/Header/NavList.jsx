@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom'
+import { Navigate } from './headerStyled'
 
 const NavList = () => {
+
   return (
-    <nav>
+    <Navigate>
         <ul>
             <li>
                 <NavLink to='/'>Home</NavLink>
@@ -11,7 +13,7 @@ const NavList = () => {
                 <NavLink to='/contacts'>Contacts</NavLink>
             </li>
         </ul>
-    </nav>
+    </Navigate>
   )
 }
 

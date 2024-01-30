@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { contactsSelector } from 'store/selectors'
 import { createContactsThunk } from 'store/Contacts/ThunkContacts'
 import { Button } from 'components/styled/formStyled'
+import { Notify } from 'notiflix'
 
 
 const ContactForm = () => {
@@ -52,6 +53,13 @@ const ContactForm = () => {
     })
 
     dispatch(createContactsThunk(data))
+    .unwrap()
+      .then((payload) => {
+        Notify.success('Contact has been successfully added!')
+       })
+      .catch((error) => {
+        Notify.failure('The contact was not added. Please try again.')
+    })
     
     setName('')
     setNumber('')
@@ -60,7 +68,7 @@ const ContactForm = () => {
   return (
         <FormStyled onSubmit={handlerSubmit}> 
           <InputWrapper data={data} value={[name, number]} onChange={handlerChange}/>
-          <Button type='submit'>Add contact</Button>
+      <Button type='submit'>Add contact</Button>
         </FormStyled>
     )
 }

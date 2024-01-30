@@ -5,7 +5,7 @@ import { Button } from 'components/styled/formStyled';
 
 const ContactsListItem = ({ contacts }) => {
 
-       const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
    return (
     <>

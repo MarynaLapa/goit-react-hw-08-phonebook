@@ -1,12 +1,11 @@
-
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { singUpThunk } from 'store/Auth/authThunk';
 import Container from 'components/partsOfPage/Container';
-import Section from 'components/partsOfPage/Section';
-import { Button, FormWrapper, Wrap, WrapperStyled } from './../components/styled/formStyled';
+import { Button, FormWrapper, SectionContacts, Wrap, WrapperStyled } from './../components/styled/formStyled';
 import SignContent from './../components/partsOfPage/SignContent';
 import RegistrationForm from 'components/partsOfPage/RegistrationForm/RegistrationForm';
+
 
 const RegistrationPage = () => {
 
@@ -26,7 +25,7 @@ const RegistrationPage = () => {
   }
 
   return (
-    <Section>
+    <SectionContacts>
       <Container>
         <Wrap >
           <FormWrapper style={WrapperStyled}>
@@ -38,19 +37,10 @@ const RegistrationPage = () => {
           </FormWrapper>
         </Wrap>
       </Container>
-    </Section>
+    </SectionContacts>
   )
 }
 
 export default RegistrationPage
 
 
- // <Section>
-    //   <Container>
-    //     <div>
-          
-    //       {/* <Button text={'Log In'} type={'button'} onClick={() => navigate('/login')} /> */}
-    //       <Link to="/login" state={{from: location}}>Sign In</Link>
-    //     </div>
-    //   </Container>
-    // </Section>

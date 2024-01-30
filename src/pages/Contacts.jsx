@@ -3,7 +3,7 @@ import ContactList from 'components/partsOfPage/ContactsList/ContactList'
 import Container from 'components/partsOfPage/Container'
 import Filter from 'components/partsOfPage/Filter'
 import Section from 'components/partsOfPage/Section'
-import { Title, TitleSection } from 'components/styled/style'
+import { SectionContacts, Title, TitleSection, Wrap } from 'components/styled/formStyled'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getContactsThunk } from 'store/Contacts/ThunkContacts'
@@ -16,14 +16,17 @@ const Contacts = () => {
     useEffect(() => {
         dispatch(getContactsThunk())
     }, [dispatch])
+  
   return (
     <>
-      <Section>
+      <SectionContacts>
         <Container>
-          <Title>Phonebook</Title>
-          <ContactForm />
+          <Wrap style={{flexDirection: 'column', width: '480px', padding: '60px 0'}}>  
+            <Title>Phonebook</Title>
+            <ContactForm />
+          </Wrap>
         </Container>
-      </Section>
+      </SectionContacts>
       <Section>
         <Container>
           <TitleSection>Contacts</TitleSection>
