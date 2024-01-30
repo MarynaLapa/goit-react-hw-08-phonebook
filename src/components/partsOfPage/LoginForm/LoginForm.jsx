@@ -25,10 +25,10 @@ const LoginForm = ({ login }) => {
       <h1 >Sign in</h1>
       <div>
         {(email.value.length > 0 ) && <label htmlFor='email'>Email</label>}
-        <input onChange={e => email.onChange(e)} onBlur={e => email.onBlur(e)} value={email.value} type="email" name="email" placeholder="Enter your email..." id="email" />
+        <input onChange={e => email.onChange(e)} onBlur={e => email.onBlur(e)} value={email.value} type="email" name="email" placeholder="Enter your email..." id="email" pattern="^[A-Za-z0-9][A-Za-z0-9\.-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$" title="Please enter a valid email address"/>
         {(email.isDirty && email.isEmpty) && <span>{email.isEmptyError}</span>}
         {(email.isDirty && email.minLength) && <span>Field length at least 3 characters</span>}
-        {(email.isDirty && email.isEmailError) && <span>{email.isEmailError}</span>}
+        {/* {(email.isDirty && email.isEmailError) && <span>{email.isEmailError}</span>} */}
       </div>
       
       <div>

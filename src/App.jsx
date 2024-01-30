@@ -4,7 +4,6 @@ import HomePage from 'pages/HomePage';
 import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom'
-import getStoredState from 'redux-persist/es/getStoredState';
 import { refreshThunk } from 'store/Auth/authThunk';
 import { profileSelector } from 'store/Auth/selectors';
 
@@ -20,7 +19,7 @@ const App = () => {
 
     !profile && dispatch(refreshThunk())
     
-  }, [dispatch])
+  }, [dispatch, profile])
   
   return (   
     <Suspense fallback={<>Loading...</>}>

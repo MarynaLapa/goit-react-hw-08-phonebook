@@ -7,7 +7,7 @@ const useValidation = (value, validations) => {
     const [minLengthError, setMinLengthError] = useState('') 
     const [maxLength, setMaxLength] = useState(false)
     const [maxLengthError, setMaxLengthError] = useState('')
-    const [isEmailError, setIsEmailError] = useState(false) //email regaxp javascript 
+    // const [isEmailError, setIsEmailError] = useState(false) //email regaxp javascript 
     const [inValid, setInValid] = useState(false)
 
     useEffect(() => {
@@ -47,10 +47,10 @@ const useValidation = (value, validations) => {
                     }
                     break
                 
-                case 'isEmail':
+                // case 'isEmail':
                     // const emailRegex ="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" ///Потрібно доопрацювати 
                     // emailRegex.test(String(value).toLowerCase()) ? setIsEmailError('') : setIsEmailError('Incorrectly entered password')
-                    break
+                    // break
 
                 default:
                     return
@@ -59,13 +59,13 @@ const useValidation = (value, validations) => {
     }, [value, validations])
 
    useEffect(() => {
-       if (isEmpty || isEmailError || minLength || maxLength) {
+       if (isEmpty || minLength || maxLength) {
            setInValid(false)
        } else {
            setInValid(true)           
-     }
+     } //|| isEmailError в умові повино бути
    
-   }, [isEmpty, isEmailError, minLength, maxLength])
+   }, [isEmpty, minLength, maxLength])
    
     
     return {
@@ -75,7 +75,7 @@ const useValidation = (value, validations) => {
         minLengthError,
         maxLength,
         maxLengthError,
-        isEmailError,
+        // isEmailError,
         inValid
     }
 }
