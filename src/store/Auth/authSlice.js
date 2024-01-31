@@ -6,7 +6,7 @@ import {  handlerLogin, handlerLogout, handlerPending, handlerRefresh, handlerRe
 const initialState = {
     isLoading: false, 
     error: '',
-    token: '',
+    token: null,
     profile: null,
     isLoggedIn: false,
     isRefreshing: false,

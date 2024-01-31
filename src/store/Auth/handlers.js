@@ -26,14 +26,14 @@ export const handlerRefreshPending = (state => {
 export const handlerRefreshRejected = (state, { payload }) => {
 	state.isLoading = false
 	state.error = payload?.error
-	state.token = ''
+	state.token = null
 	state.profile = null
 }
 
 export const handlerLogout = state => {
 	state.isLoading = false
 	state.error = ''
-	state.token = ''
+	state.token = null 
 	state.profile = { name: null, email: null }
 	state.isLoggedIn = false;
 }

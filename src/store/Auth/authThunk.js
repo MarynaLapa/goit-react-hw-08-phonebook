@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { Notify } from "notiflix";
 import { loginApi, logoutApi, refreshApi, signUpApi } from '../../components/api/auth';
-import { clearAuthHeader} from "components/api/api";
+import { clearAuthHeader, setAuthHeader} from "components/api/api";
 
 
 
@@ -33,8 +33,8 @@ export const refreshThunk = createAsyncThunk(
             if (persistedToken === null) {
                 return rejectWithValue('Unable to fetch user');
             }
-            // setAuthHeader(persistedToken);
-            const { data } = await refreshApi(persistedToken)
+            setAuthHeader(persistedToken);
+            const { data } = await refreshApi()
             return data
         } catch (error) {
             return rejectWithValue(error.message)
@@ -45,7 +45,7 @@ export const refreshThunk = createAsyncThunk(
 export const logoutThunk = createAsyncThunk(
     'auth/logout', async (_, { rejectWithValue, getState }) => {
         try {
-            await logoutApi(getState().auth.token)
+            await logoutApi()
             clearAuthHeader();
         } catch (error) {
             return rejectWithValue(error.message)

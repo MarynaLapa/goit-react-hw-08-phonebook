@@ -14,7 +14,7 @@ const Header = () => {
     <HeaderStyled>
       <HeaderContainer >
         <NavList />
-        {isLoggedIn? <Logout />: <LoginList/>}
+        {isLoggedIn ? <Logout /> : <LoginList />}
       </HeaderContainer>
     </HeaderStyled>
   )

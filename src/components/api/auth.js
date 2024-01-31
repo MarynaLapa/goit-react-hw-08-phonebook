@@ -10,20 +10,24 @@ export const loginApi = async (body) => {
     return data
 }
 
-export const refreshApi = async (token) => {
-    const { data } = await api('/users/current', {
-        headers: {
-             Authorization: `Bearer ${token}`
-        }
-    })
+export const refreshApi = async () => {
+    const { data } = await api('/users/current',
+        // {
+        // headers: {
+        //      Authorization: `Bearer ${token}`
+        // }
+        // }
+    )
     return data
 }
 
-export const logoutApi = async (token) => {
-    const { data } = await api.post('/users/logout', {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    })
+export const logoutApi = async () => {
+    const { data } = await api.post('/users/logout',
+        // {
+        // headers: {
+        //     Authorization: `Bearer ${token}`
+        // }
+        // }
+    )
     return data
 }
