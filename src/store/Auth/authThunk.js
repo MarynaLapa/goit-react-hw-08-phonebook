@@ -6,9 +6,9 @@ import { clearAuthHeader, setAuthHeader} from "components/api/api";
 
 
 export const singUpThunk = createAsyncThunk(
-    'auth/signup', async (body, { rejectWithValue, getState }) => {
+    'auth/signup', async (body, { rejectWithValue }) => {
     try {
-        const data = await signUpApi(body, getState().auth.token)
+        const data = await signUpApi(body)
          setAuthHeader(data.token);
         Notify.success('Congratulations, you have been successfully registered!')
         return data
@@ -19,9 +19,9 @@ export const singUpThunk = createAsyncThunk(
 })
 
 export const loginThunk = createAsyncThunk(
-    'auth/login', async (body, { rejectWithValue, getState }) => {
+    'auth/login', async (body, { rejectWithValue}) => {
     try {
-        const data = await loginApi(body, getState().auth.token)
+        const data = await loginApi(body)
         setAuthHeader(data.token);
         return data
     } catch (error) {
@@ -37,7 +37,7 @@ export const refreshThunk = createAsyncThunk(
                 return rejectWithValue('Unable to fetch user');
             }
             setAuthHeader(persistedToken);
-            const { data } = await refreshApi()
+            const data = await refreshApi(persistedToken)
             return data
         } catch (error) {
             return rejectWithValue(error.message)

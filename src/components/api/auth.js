@@ -10,30 +10,20 @@ export const signUpApi = async (body, token) => {
 }
 
 export const loginApi = async (body, token) => {
-    const { data } = await api.post('/users/login', body, {
-        headers: {
-             Authorization: `Bearer ${token}`
-        }
-    })
+    const { data } = await api.post('/users/login', body)
     return data
 }
 
 export const refreshApi = async (token) => {
-    const { data } = await api('/users/current',{
+    const { data } = await api('/users/current', {
         headers: {
-             Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`
         }
-    })
+        })
     return data
 }
 
 export const logoutApi = async () => {
-    const { data } = await api.post('/users/logout',
-        // {
-        // headers: {
-        //     Authorization: `Bearer ${token}`
-        // }
-        // }
-    )
+    const { data } = await api.post('/users/logout')
     return data
 }
