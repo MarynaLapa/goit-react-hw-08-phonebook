@@ -1,20 +1,20 @@
 import { useSelector } from 'react-redux'
 import Logout from './Logout'
 import NavList from './NavList'
-import { profileSelector } from 'store/Auth/selectors'
 import LoginList from './LoginList'
 import { HeaderContainer, HeaderStyled } from './headerStyled'
+import { selectIsLoggedIn } from 'store/Auth/selectors'
 
 
 const Header = () => {
 
-  const profile = useSelector(profileSelector)
+  const isLoggedIn = useSelector(selectIsLoggedIn)
 
   return (
     <HeaderStyled>
       <HeaderContainer >
         <NavList />
-        {profile ? <Logout />: <LoginList/>}
+        {isLoggedIn? <Logout />: <LoginList/>}
       </HeaderContainer>
     </HeaderStyled>
   )

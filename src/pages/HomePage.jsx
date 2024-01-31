@@ -14,7 +14,7 @@ const HomePage = () => {
   }
   
   return (
-    <Section>
+    <Section style={{backgroundColor: 'red'}}>
       <Hero>
         <Title>Welcome to the phonebook</Title>
         <HomeButton onClick={handlerNavigate}>

@@ -20,7 +20,7 @@ export const refreshApi = async (token) => {
 }
 
 export const logoutApi = async (token) => {
-    const { data } = await api.post('/users/logout', null, {
+    const { data } = await api.post('/users/logout', {
         headers: {
             Authorization: `Bearer ${token}`
         }

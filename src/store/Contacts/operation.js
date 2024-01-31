@@ -8,7 +8,7 @@ export const handlerFulfilled = state => {
     state.isLoading = false
 }
 
-export const handlerRejected =  (state, { payload }) => {
+export const handlerRejected = (state, { payload }) => {
     state.isLoading = false
-    state.error = payload.message
+    state.error = payload?.error
 }

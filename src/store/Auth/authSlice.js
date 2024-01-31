@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { loginThunk, logoutThunk, refreshThunk, singUpThunk } from './authThunk';
-import {  handlerLogin, handlerLogout, handlerPending, handlerRefresh, handlerRejected, handlerRejectedRefresh, handlerSignUp } from './handlers';
+import {  handlerLogin, handlerLogout, handlerPending, handlerRefresh, handlerRefreshPending, handlerRefreshRejected, handlerRejected, handlerSignUp } from './handlers';
 
 const initialState = {
     isLoading: false, 
@@ -25,9 +25,9 @@ const authSlice = createSlice({
             .addCase(loginThunk.fulfilled, handlerLogin)
             .addCase(loginThunk.rejected, handlerRejected)
 
-            .addCase(refreshThunk.pending, handlerPending)
+            .addCase(refreshThunk.pending, handlerRefreshPending)
             .addCase(refreshThunk.fulfilled, handlerRefresh)
-            .addCase(refreshThunk.rejected, handlerRejectedRefresh)
+            .addCase(refreshThunk.rejected, handlerRefreshRejected)
         
             .addCase(logoutThunk.pending, handlerPending)
             .addCase(logoutThunk.fulfilled, handlerLogout)

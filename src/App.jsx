@@ -19,7 +19,7 @@ const App = () => {
 
     !profile && dispatch(refreshThunk())
     
-  }, [dispatch, profile])
+  }, [profile, dispatch])
   
   return (   
     <Suspense fallback={<>Loading...</>}>

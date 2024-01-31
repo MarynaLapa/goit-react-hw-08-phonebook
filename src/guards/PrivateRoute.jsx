@@ -4,10 +4,12 @@ import { isAuthSelector } from 'store/Auth/selectors'
 
 const PrivateRoute = ({ children }) => {
 
-    const isAuth = useSelector(isAuthSelector)
-    const location = useLocation()
+  const isAuth = useSelector(isAuthSelector)
+  console.log('isAuth', isAuth)
+  const location = useLocation()
+  if (isAuth) console.log('я тут')
 
-  return isAuth ? children : <Navigate to='/login' state={location}/>
+    return isAuth ? children : <Navigate to='/login' state={location} />
 }
 
 export default PrivateRoute
