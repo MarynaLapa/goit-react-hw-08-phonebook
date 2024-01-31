@@ -3,12 +3,11 @@ import { Notify } from "notiflix";
 import { loginApi, logoutApi, refreshApi, signUpApi } from '../../components/api/auth';
 import { clearAuthHeader, setAuthHeader} from "components/api/api";
 
-
-
 export const singUpThunk = createAsyncThunk(
     'auth/signup', async (body, { rejectWithValue }) => {
     try {
         const data = await signUpApi(body)
+        setAuthHeader(data.token);
         Notify.success('Congratulations, you have been successfully registered!')
         return data
     } catch (error) {
@@ -20,7 +19,9 @@ export const singUpThunk = createAsyncThunk(
 export const loginThunk = createAsyncThunk(
     'auth/login', async (body, { rejectWithValue }) => {
     try {
-        return await loginApi(body)
+        const data = await loginApi(body)
+        setAuthHeader(data.token);
+        return data
     } catch (error) {
         return rejectWithValue(error.message)
     }
@@ -43,7 +44,7 @@ export const refreshThunk = createAsyncThunk(
 )
 
 export const logoutThunk = createAsyncThunk(
-    'auth/logout', async (_, { rejectWithValue, getState }) => {
+    'auth/logout', async (_, { rejectWithValue }) => {
         try {
             await logoutApi()
             clearAuthHeader();

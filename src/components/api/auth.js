@@ -11,23 +11,11 @@ export const loginApi = async (body) => {
 }
 
 export const refreshApi = async () => {
-    const { data } = await api('/users/current',
-        // {
-        // headers: {
-        //      Authorization: `Bearer ${token}`
-        // }
-        // }
-    )
+    const { data } = await api('/users/current')
     return data
 }
 
 export const logoutApi = async () => {
-    const { data } = await api.post('/users/logout',
-        // {
-        // headers: {
-        //     Authorization: `Bearer ${token}`
-        // }
-        // }
-    )
+    const { data } = await api.post('/users/logout')
     return data
 }

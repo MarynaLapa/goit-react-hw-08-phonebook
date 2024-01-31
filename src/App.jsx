@@ -3,7 +3,7 @@ import PrivateRoute from 'guards/PrivateRoute';
 import HomePage from 'pages/HomePage';
 import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { refreshThunk } from 'store/Auth/authThunk';
 
 const Contacts = lazy(() => import('pages/Contacts'))
