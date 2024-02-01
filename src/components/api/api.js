@@ -1,10 +1,11 @@
 import axios from "axios"
 
-const API_BASE_URL = 'https://connections-api.herokuapp.com/';
+// const API_BASE_URL = 'https://connections-api.herokuapp.com/';
 
-export const api = axios.create({
-    baseURL: API_BASE_URL,
-})
+// export const api = axios.create({
+//     baseURL: API_BASE_URL,
+// })
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;

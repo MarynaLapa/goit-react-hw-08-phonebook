@@ -1,7 +1,8 @@
-import { api } from "./api";
+import axios from "axios";
+// import { api } from "./api";
 
 export const getAllContacts = async (token) => {
-    const { data } = await api('contacts', {
+    const { data } = await axios('contacts', {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -10,7 +11,7 @@ export const getAllContacts = async (token) => {
 }
 
 export const addContact = async (contact, token) => {
-    const { data } = await api.post('contacts', contact, {
+    const { data } = await axios.post('contacts', contact, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -19,7 +20,7 @@ export const addContact = async (contact, token) => {
 }
 
 export const removeContact = async (contactId, token) => {
-    const { data } = await api.delete(`contacts/${contactId}`, {
+    const { data } = await axios.delete(`contacts/${contactId}`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
