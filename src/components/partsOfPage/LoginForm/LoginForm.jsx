@@ -1,6 +1,6 @@
 
 import { useInput } from "../validation/validationState"
-import { Button, FormContainer } from "../../styled/formStyled"
+import { Button, FormContainer } from "../../styled/styled"
 
 const LoginForm = ({ login }) => {
 

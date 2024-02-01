@@ -3,11 +3,11 @@ import ContactList from 'components/partsOfPage/ContactsList/ContactList'
 import Container from 'components/partsOfPage/Container'
 import Filter from 'components/partsOfPage/Filter'
 import Section from 'components/partsOfPage/Section'
-import { SectionContacts, Title, TitleSection, Wrap } from 'components/styled/formStyled'
+import { SectionContacts, Title, TitleSection, Wrap } from 'components/styled/styled'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getContactsThunk } from 'store/Contacts/ThunkContacts'
-import { errorSelector } from 'store/selectors'
+import { errorSelector } from 'store/Contacts/selectors'
 
 const Contacts = () => {
    const dispatch = useDispatch()

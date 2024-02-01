@@ -1,4 +1,4 @@
-import { Button, FormContainer } from "../../styled/formStyled"
+import { Button, FormContainer } from "../../styled/styled"
 import { useInput } from "../validation/validationState"
 
 const RegistrationForm = ({ register }) => {

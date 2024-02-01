@@ -1,4 +1,4 @@
-import { Container, InputContainer } from 'components/styled/style'
+import { Container, InputContainer } from 'components/styled/styled'
 import Input from './Input'
 
 

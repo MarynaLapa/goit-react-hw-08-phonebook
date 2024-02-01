@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import data from './data.json'
-import { FormStyled } from 'components/styled/style'
-import InputWrapper from '../InputWrapper'
 import { useDispatch, useSelector } from 'react-redux'
-import { contactsSelector } from 'store/selectors'
+import { contactsSelector } from 'store/Contacts/selectors'
 import { createContactsThunk } from 'store/Contacts/ThunkContacts'
-import { Button } from 'components/styled/formStyled'
+import { Button, FormStyled } from 'components/styled/styled'
 import { Notify } from 'notiflix'
+import InputWrapper from '../InputWrapper'
 
 
 const ContactForm = () => {
@@ -54,10 +53,10 @@ const ContactForm = () => {
 
     dispatch(createContactsThunk(data))
     .unwrap()
-      .then((payload) => {
+      .then(() => {
         Notify.success('Contact has been successfully added!')
        })
-      .catch((error) => {
+      .catch(() => {
         Notify.failure('The contact was not added. Please try again.')
     })
     
@@ -68,7 +67,7 @@ const ContactForm = () => {
   return (
         <FormStyled onSubmit={handlerSubmit}> 
           <InputWrapper data={data} value={[name, number]} onChange={handlerChange}/>
-      <Button type='submit'>Add contact</Button>
+          <Button type='submit'>Add contact</Button>
         </FormStyled>
     )
 }

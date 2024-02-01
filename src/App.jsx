@@ -1,5 +1,6 @@
 import Layout from 'components/Layout/Layout';
 import PrivateRoute from 'guards/PrivateRoute';
+import PublicRoute from 'guards/PublicRoute';
 import HomePage from 'pages/HomePage';
 import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -29,8 +30,14 @@ const App = () => {
           <PrivateRoute>
             <Contacts />
           </PrivateRoute>} />
-          <Route path='register' element={<RegistrationPage />} />
-          <Route path='login' element={<LoginPage />} />
+          <Route path='register' element={
+            <PublicRoute>
+              <RegistrationPage />
+            </PublicRoute>} />
+          <Route path='login' element={
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

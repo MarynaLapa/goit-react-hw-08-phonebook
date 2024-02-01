@@ -1,8 +1,8 @@
-import { List } from 'components/styled/style'
+import { List } from 'components/styled/styled'
 import ContactsListItem from './ContactsListItem'
 
 import { useSelector } from 'react-redux'
-import { contactsSelector, filterListSelector, filterSelector } from 'store/selectors'
+import { contactsSelector, filterListSelector, filterSelector } from 'store/Contacts/selectors'
 
 
 const ContactList = () => {

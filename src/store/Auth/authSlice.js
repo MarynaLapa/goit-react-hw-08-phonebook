@@ -4,8 +4,6 @@ import { loginThunk, logoutThunk, refreshThunk, singUpThunk } from './authThunk'
 import {  handlerLogin, handlerLogout, handlerPending, handlerRefresh, handlerRefreshPending, handlerRefreshRejected, handlerRejected, handlerSignUp } from './handlers';
 
 const initialState = {
-    isLoading: false, 
-    error: '',
     token: null,
     profile: null,
     isLoggedIn: false,

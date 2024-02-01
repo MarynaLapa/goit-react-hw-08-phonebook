@@ -1,6 +1,6 @@
 import Container from "components/partsOfPage/Container"
-import { Button, SectionContacts, Wrap, WrapperStyled } from "components/styled/formStyled"
-import { FormWrapper } from '../components/styled/formStyled';
+import { Button, SectionContacts, Wrap, WrapperStyled } from "components/styled/styled"
+import { FormWrapper } from '../components/styled/styled';
 import LoginForm from "components/partsOfPage/LoginForm/LoginForm"
 
 import { useDispatch } from "react-redux"

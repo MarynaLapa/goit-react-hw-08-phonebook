@@ -1,8 +1,8 @@
-import { Wrapper } from "components/styled/style"
+import { Wrapper } from "components/styled/styled"
 
 const Container = ({children}) => {
   return (
-    <Wrapper >{children}</Wrapper>
+    <Wrapper>{children}</Wrapper>
   )
 }
 

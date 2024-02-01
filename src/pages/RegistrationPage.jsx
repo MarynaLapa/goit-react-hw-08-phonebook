@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { singUpThunk } from 'store/Auth/authThunk';
 import Container from 'components/partsOfPage/Container';
-import { Button, FormWrapper, SectionContacts, Wrap, WrapperStyled } from './../components/styled/formStyled';
+import { Button, FormWrapper, SectionContacts, Wrap, WrapperStyled } from '../components/styled/styled';
 import SignContent from './../components/partsOfPage/SignContent';
 import RegistrationForm from 'components/partsOfPage/RegistrationForm/RegistrationForm';
 

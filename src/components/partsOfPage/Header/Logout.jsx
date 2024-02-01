@@ -1,4 +1,4 @@
-import { Button, LogOut } from "components/styled/formStyled"
+import { Button, LogOut } from "components/styled/styled"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { logoutThunk } from "store/Auth/authThunk"

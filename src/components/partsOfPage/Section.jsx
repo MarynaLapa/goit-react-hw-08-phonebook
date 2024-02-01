@@ -1,4 +1,4 @@
-import { SectionStyled } from "components/styled/formStyled"
+import { SectionStyled } from "components/styled/styled"
 
 const Section = ({children}) => {
   return (

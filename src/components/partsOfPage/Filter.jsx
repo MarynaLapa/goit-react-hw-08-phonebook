@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'store/sliceFilter';
-import { filterSelector } from 'store/selectors';
+import { setFilter } from 'store/Filter/sliceFilter';
+import { filterSelector } from 'store/Contacts/selectors';
 
 import Input from './Input';
-import { InputContainer } from 'components/styled/style';
+import { InputContainer } from 'components/styled/styled';
 
 const Filter = ({ title }) => {
 

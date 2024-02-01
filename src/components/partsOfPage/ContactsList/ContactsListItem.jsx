@@ -1,7 +1,7 @@
 
 import { useDispatch } from "react-redux"
 import { removeContactThunk } from "store/Contacts/ThunkContacts"
-import { Button } from 'components/styled/formStyled';
+import { Button } from 'components/styled/styled';
 
 const ContactsListItem = ({ contacts }) => {
 
