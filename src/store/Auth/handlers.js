@@ -13,21 +13,23 @@ export const handlerLogin = (state, { payload }) => {
 }
 
 export const handlerRefresh = (state, { payload }) => {
-	state.isLoading = false
-	state.profile = payload.user 
-	state.token = payload.token
+	console.log('payload', payload)
+	// state.isLoading = false
+	state.profile = payload
+	// state.token = payload.token
 	state.isRefreshing = false
+	state.isLoggedIn = true
 }
 export const handlerRefreshPending = (state => {
-	handlerPending()
+	// handlerPending()
     state.isRefreshing = true;
 })
 	
 export const handlerRefreshRejected = (state, { payload }) => {
 	state.isLoading = false
-	state.error = payload?.error
-	state.token = null
-	state.profile = null
+	// state.error = payload?.error
+	// state.token = null
+	// state.profile = null
 }
 
 export const handlerLogout = state => {
