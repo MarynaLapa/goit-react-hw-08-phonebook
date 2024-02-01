@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createContactsThunk, getContactsThunk, removeContactThunk } from './ThunkContacts'
-import { handlerFulfilled, handlerPending, handlerRejected } from './operation'
+import { handlerFulfilled, handlerPending, handlerRejected } from '../Root/operation'
 
 const initialState = {
     items: [],
