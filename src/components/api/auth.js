@@ -11,12 +11,8 @@ export const loginApi = async (body) => {
     return data
 }
 
-export const refreshApi = async (token) => {
-    const { data } = await axios('users/current', {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    })
+export const refreshApi = async () => {
+    const { data } = await axios.get('/users/current')
     return data
 }
 
