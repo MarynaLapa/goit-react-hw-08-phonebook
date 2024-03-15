@@ -1,4 +1,5 @@
 import Layout from 'components/Layout/Layout';
+import Loader from 'components/Loader/Loader';
 import PrivateRoute from 'guards/PrivateRoute';
 import PublicRoute from 'guards/PublicRoute';
 import HomePage from 'pages/HomePage';
@@ -21,27 +22,30 @@ const App = () => {
     
   }, [dispatch])
 
-  return (   
-    <Suspense fallback={<>Loading...</>}>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<HomePage />} />
-          <Route path='contacts' element={
-          <PrivateRoute>
-            <Contacts />
-          </PrivateRoute>} />
-          <Route path='register' element={
-            <PublicRoute>
-              <RegistrationPage />
-            </PublicRoute>} />
-          <Route path='login' element={
-            <PublicRoute>
-              <LoginPage />
-            </PublicRoute>} />
-        </Route>
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </Suspense>
+  return ( 
+    <> 
+      <Loader/> 
+      <Suspense fallback={<>Loading...</>}>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<HomePage />} />
+            <Route path='contacts' element={
+            <PrivateRoute>
+              <Contacts />
+            </PrivateRoute>} />
+            <Route path='register' element={
+              <PublicRoute>
+                <RegistrationPage />
+              </PublicRoute>} />
+            <Route path='login' element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </Suspense>
+    </>
   )
 };
 

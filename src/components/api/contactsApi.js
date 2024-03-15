@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { api } from "./api";
 
 export const getAllContacts = async (token) => {
     const { data } = await axios('contacts', {

@@ -1,5 +1,4 @@
 import axios from "axios"
-// import { api } from "./api"
 
 export const signUpApi = async (body) => {
     const { data } = await axios.post('users/signup', body)

@@ -5,6 +5,7 @@ import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist
 import { contactsReducer } from "./Contacts/sliceContacts";
 import { filterReducer } from "./Filter/sliceFilter";
 import { authReducer } from "./Auth/authSlice";
+import { rootReducer } from "./Root/rootSlice";
 
 const persistConfig = {
   key: 'auth',
@@ -19,6 +20,7 @@ export const store = configureStore({
     filter: filterReducer,
     contacts: contactsReducer,
     auth: persistedReducer,
+    root: rootReducer,
 },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

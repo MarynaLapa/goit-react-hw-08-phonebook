@@ -7,11 +7,11 @@ import { SectionContacts, Title, TitleSection, Wrap } from 'components/styled/st
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getContactsThunk } from 'store/Contacts/ThunkContacts'
-import { errorSelector } from 'store/Contacts/selectors'
+import { globalErrorSelector } from 'store/Root/selectors'
 
 const Contacts = () => {
    const dispatch = useDispatch()
-    const error = useSelector(errorSelector)
+    const error = useSelector(globalErrorSelector)
     
     useEffect(() => {
         dispatch(getContactsThunk())

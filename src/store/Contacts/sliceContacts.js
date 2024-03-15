@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createContactsThunk, getContactsThunk, removeContactThunk } from './ThunkContacts'
-import { handlerFulfilled, handlerPending, handlerRejected } from '../Root/operation'
 
 const initialState = {
-    items: [],
-    isLoading: false,
-    error: '',    
+    items: [],   
 }
 
 const contactsSlice = createSlice({
@@ -22,10 +19,7 @@ const contactsSlice = createSlice({
             .addCase(removeContactThunk.fulfilled, (state, { payload }) => {
                 const index = state.items.findIndex((el) => el.id === payload.id)
                 state.items.splice(index, 1)
-            })
-            .addMatcher((action) => action.type.endsWith('/pending'), handlerPending)
-            .addMatcher((action) => action.type.endsWith('/fulfilled'), handlerFulfilled)
-            .addMatcher((action) => action.type.endsWith('/rejected'), handlerRejected)     
+            })     
     }
 })
 
